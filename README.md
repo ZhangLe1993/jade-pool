@@ -34,7 +34,7 @@ yum -y install openssh*
     chkconfig sshd on
 # 安装network命令 ifconfig
     yum install net-tools -y
-# 提交
+# 退出容器后把容器提交为镜像
     docker commit -m 'openssh' -a 'yule.zhang' abc centos-ssh:latest
 
 # 配置跨主机容器访问
@@ -62,7 +62,12 @@ yum -y install openssh*
 # 部署容器
     cd /root
     mkdir code
-    git clone https://github.com/ZhangLe1993/jade-pool.git
+    git init
+    git remote add origin https://github.com/ZhangLe1993/jade-pool.git
+    git checkout -b master
+    git pull origin master
+    git fetch
+    git branch --set-upstream-to=origin/master master
 
 
 # maven
