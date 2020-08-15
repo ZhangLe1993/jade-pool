@@ -1,3 +1,4 @@
+create database if not exists proxy;
 use proxy;
 /**
    实例表，数据仓库管理员主动创建添加。
@@ -99,3 +100,19 @@ CREATE TABLE IF NOT EXISTS `ssh`
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COMMENT '远程链接配置';
 
+DROP TABLE IF EXISTS `agents`;
+CREATE TABLE IF NOT EXISTS `agents` (
+                          `id` int unsigned NOT NULL AUTO_INCREMENT,
+                          `local_url` varchar(500) NOT NULL DEFAULT '' COMMENT '路径',
+                          `target_host` varchar(200) NOT NULL DEFAULT '' COMMENT '目标主机',
+                          `target_url` varchar(500) NOT NULL DEFAULT '' COMMENT '目标路径',
+                          `header_append` text COMMENT 'header',
+                          `cookie_append` text COMMENT 'cookie',
+                          `url_append` text COMMENT 'url',
+                          `body_append` text COMMENT 'body',
+                          `status` varchar(20) NOT NULL DEFAULT 'CREATE' COMMENT '状态: CREATE, TEST, PASS, DELETE',
+                          `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                          `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建人',
+                          PRIMARY KEY (`id`),
+                          UNIQUE KEY `uk_url` (`local_url`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='代理表';
