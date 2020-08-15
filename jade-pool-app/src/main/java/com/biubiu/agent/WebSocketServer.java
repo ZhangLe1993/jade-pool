@@ -60,9 +60,9 @@ public class WebSocketServer {
         MessageModel messageModel = JSON.parseObject(message, MessageModel.class);
         switch(messageModel.getType()) {
             case "connect":
-                Remote connData = JSON.parseObject(messageModel.getData(), Remote.class);
+                Remote remote = JSON.parseObject(messageModel.getData(), Remote.class);
                 if(null == this.sshBuilder) {
-                    this.sshBuilder = new SshBuilder(connData.getHost(), connData.getPort());
+                    this.sshBuilder = new SshBuilder(remote);
                     try {
                         sshBuilder.start(session);
                     } catch (Exception e) {

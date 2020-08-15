@@ -10,7 +10,7 @@
     >
       <!--{{item.content}}-->
       <LatestUsed v-if="item.name === '1'"></LatestUsed>
-      <XTerm  v-if="item.name !== '1'" :ref="item.name" :divId="item.divId"></XTerm>
+      <XTerm  v-if="item.name !== '1'" :ref="item.name" :divId="item.divId" :node="item.node"></XTerm>
     </el-tab-pane>
   </el-tabs>
 </template>
@@ -39,14 +39,15 @@ export default {
     }
   },
   methods: {
-    addTab(targetName) {
-      console.log(targetName);
+    addTab(node) {
+      console.log(node);
       let newTabName = ++this.tabIndex + '';
       this.editableTabs.push({
-        title: targetName,
+        title: node.name + '-' + node.host,
         name: newTabName,
         closable: true,
         divId: "terminal_" + newTabName,
+        node: node,
       });
       this.editableTabsValue = newTabName;
       this.activeName = newTabName;

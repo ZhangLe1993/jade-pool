@@ -22,9 +22,9 @@
         SshTree: SshTree,
       },
       methods: {
-        addTab(name) {
+        addTab(node) {
           // const targetName = this.$refs.terminalTabs.editableTabsValue
-          this.$refs.terminalTabs.addTab(name);
+          this.$refs.terminalTabs.addTab(node);
         },
 
       }

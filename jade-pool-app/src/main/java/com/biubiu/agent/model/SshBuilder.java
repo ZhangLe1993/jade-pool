@@ -14,23 +14,21 @@ import java.nio.charset.StandardCharsets;
 
 @Slf4j
 public class SshBuilder {
-    private String host;
-    private Integer port;
+    private Remote remote;
     private JSch jsch;
 
     private InputStream inputStream;
     private OutputStream outputStream;
 
-    public SshBuilder(String host, Integer port) {
-        this.host = host;
-        this.port = port;
+    public SshBuilder(Remote remote) {
+        this.remote = remote;
         this.jsch = new JSch();
     }
 
 
     public void start(javax.websocket.Session wsSession) throws Exception {
-        Session session = jsch.getSession("root", "121.196.27.184", 22);
-        session.setPassword("cxf.7057621");
+        Session session = jsch.getSession(this.remote.getUser(), this.remote.getHost(), this.remote.getPort());
+        session.setPassword(this.remote.getPassword());
         session.setConfig("StrictHostKeyChecking", "no");
         // 跳过Kerberos身份验证
         session.setConfig("PreferredAuthentications", "publickey,keyboard-interactive,password");

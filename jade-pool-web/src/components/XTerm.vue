@@ -12,6 +12,7 @@ export default {
   name:'XTerm',
   props: {
     divId: String,
+    node: Object,
   },
   data() {
     return {
@@ -61,7 +62,7 @@ export default {
     open: function() {
       console.log("socket连接成功");
       this.initXterm();
-      this.socket.onsend(JSON.stringify({type:"connect",data: {loginName: 'root', host:'121.196.27.184', port: '22'}})); //转换为字符串
+      this.socket.onsend(JSON.stringify({type:"connect",data: {user: this.user, host:this.host, port: this.port}})); //转换为字符串
     },
     error: function() {
       console.log("连接错误");

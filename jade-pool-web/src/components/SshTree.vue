@@ -39,10 +39,10 @@ export default {
   },
   methods: {
     // eslint-disable-next-line no-unused-vars
-    handleNodeClick(data) {
-      if(data.type === 'NODE') {
-        console.log(data);
-        this.addTab(data.name + '-' + data.host);
+    handleNodeClick(node) {
+      if(node.type === 'NODE') {
+        console.log(node);
+        this.addTab(node);
       }
 
     },
