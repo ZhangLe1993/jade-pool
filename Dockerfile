@@ -9,3 +9,5 @@ COPY deploy.sh /root/deploy.sh
 COPY settings.xml /root/settings.xml
 
 WORKDIR /root
+
+CMD ["sh", "deploy.sh"]
