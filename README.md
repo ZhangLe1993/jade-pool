@@ -51,6 +51,8 @@ yum -y install openssh*
     docker run -itd --net docker-br0 --ip 172.172.0.16 --name abh -v /root/.ssh:/root/.ssh -p 20006:22 centos-ssh /usr/sbin/sshd -D
     docker run -itd --net docker-br0 --ip 172.172.0.17 --name abi -v /root/.ssh:/root/.ssh -p 20007:22 centos-ssh /usr/sbin/sshd -D
 
+# 测试ssh 记住，如果使用容器的IP的话，要使用22端口，如果使用宿主机登录的话才能使用20001端口，弯路
+    ssh root@172.172.0.11 -p 22
 
 # 部署容器
     cd /root
