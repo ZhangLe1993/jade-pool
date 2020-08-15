@@ -34,9 +34,9 @@ public class SshBuilder {
         }
         Session session = jsch.getSession(this.remote.getUser(), this.remote.getHost(), this.remote.getPort());
         session.setPassword(this.remote.getPassword());
-        session.setConfig("StrictHostKeyChecking", "no");
+        session.setConfig("StrictHostKeyChecking", "yes");
         // 跳过Kerberos身份验证
-        session.setConfig("PreferredAuthentications", "publickey,keyboard-interactive,password");
+        // session.setConfig("PreferredAuthentications", "publickey,keyboard-interactive,password");
         session.connect(3000);
         Channel channel = session.openChannel("shell");
         this.inputStream = channel.getInputStream();

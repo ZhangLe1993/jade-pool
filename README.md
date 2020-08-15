@@ -42,7 +42,7 @@ yum -y install openssh*
 # 在要访问容器的宿主机上添加路由表
     # ip route add 172.172.1.0/24 via ECS(IP) dev eno16777736(本机网卡)
 
-# 运行7个容器作为测试
+# 运行7个容器作为测试(先在jade-pool的容器中执行ssh-keygen,一路回车生成密钥，加入到主机的新人中，然后这七个容器挂载这个目录，批量授信）
     docker run -itd --net docker-br0 --ip 172.172.0.11 --name abc -v /root/.ssh:/root/.ssh -p 20001:22 centos-ssh /usr/sbin/sshd -D
     docker run -itd --net docker-br0 --ip 172.172.0.12 --name abd -v /root/.ssh:/root/.ssh -p 20002:22 centos-ssh /usr/sbin/sshd -D
     docker run -itd --net docker-br0 --ip 172.172.0.13 --name abe -v /root/.ssh:/root/.ssh -p 20003:22 centos-ssh /usr/sbin/sshd -D
