@@ -159,7 +159,7 @@
             };
         },
         mounted: function() {
-          this.getSchema(1);
+          this.getSchema(2);
         },
     }
 </script>

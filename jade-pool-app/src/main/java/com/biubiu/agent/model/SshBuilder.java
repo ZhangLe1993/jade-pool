@@ -27,6 +27,7 @@ public class SshBuilder {
         this.jsch = new JSch();
     }
 
+
     public void start(javax.websocket.Session wsSession) throws Exception {
         Session session = jsch.getSession("root", "121.196.27.184", 22);
         session.setPassword("cxf.7057621");
