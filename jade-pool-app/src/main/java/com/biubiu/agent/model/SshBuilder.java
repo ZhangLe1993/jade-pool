@@ -11,6 +11,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @Slf4j
 public class SshBuilder {
@@ -27,6 +29,9 @@ public class SshBuilder {
 
 
     public void start(javax.websocket.Session wsSession) throws Exception {
+        if (Files.exists(Paths.get(remote.getIdentity()))) {
+            jsch.addIdentity(remote.getIdentity(), remote.getPassphrase());
+        }
         Session session = jsch.getSession(this.remote.getUser(), this.remote.getHost(), this.remote.getPort());
         session.setPassword(this.remote.getPassword());
         session.setConfig("StrictHostKeyChecking", "no");

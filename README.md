@@ -1,6 +1,6 @@
 # 瑶池开发者平台
 ## 运行一个mysql
-    sudo docker run -itd -p 3306:3306 --name mysql -v /home/yinyue/mysql/conf:/etc/mysql/conf.d -v /home/yinyue/mysql/logs:/logs -v /home/yinyue/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
+    sudo docker run -itd -p 3306:3306 --name mysql -v /data/mysql/conf:/etc/mysql/conf.d -v /data/mysql/logs:/logs -v /data/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
 
 # 运行一个容器
     docker run -itd  --privileged --name abc -p 2200:22 centos /usr/sbin/init
@@ -43,13 +43,13 @@ yum -y install openssh*
     # ip route add 172.172.1.0/24 via ECS(IP) dev eno16777736(本机网卡)
 
 # 运行7个容器作为测试
-    docker run -itd --net docker-br0 --ip 172.172.0.11 --name abc -p 20001:22 centos-ssh /usr/sbin/sshd -D
-    docker run -itd --net docker-br0 --ip 172.172.0.12 --name abd -p 20002:22 centos-ssh /usr/sbin/sshd -D
-    docker run -itd --net docker-br0 --ip 172.172.0.13 --name abe -p 20003:22 centos-ssh /usr/sbin/sshd -D
-    docker run -itd --net docker-br0 --ip 172.172.0.14 --name abf -p 20004:22 centos-ssh /usr/sbin/sshd -D
-    docker run -itd --net docker-br0 --ip 172.172.0.15 --name abg -p 20005:22 centos-ssh /usr/sbin/sshd -D
-    docker run -itd --net docker-br0 --ip 172.172.0.16 --name abh -p 20006:22 centos-ssh /usr/sbin/sshd -D
-    docker run -itd --net docker-br0 --ip 172.172.0.17 --name abi -p 20007:22 centos-ssh /usr/sbin/sshd -D
+    docker run -itd --net docker-br0 --ip 172.172.0.11 --name abc -v /root/.ssh:/root/.ssh -p 20001:22 centos-ssh /usr/sbin/sshd -D
+    docker run -itd --net docker-br0 --ip 172.172.0.12 --name abd -v /root/.ssh:/root/.ssh -p 20002:22 centos-ssh /usr/sbin/sshd -D
+    docker run -itd --net docker-br0 --ip 172.172.0.13 --name abe -v /root/.ssh:/root/.ssh -p 20003:22 centos-ssh /usr/sbin/sshd -D
+    docker run -itd --net docker-br0 --ip 172.172.0.14 --name abf -v /root/.ssh:/root/.ssh -p 20004:22 centos-ssh /usr/sbin/sshd -D
+    docker run -itd --net docker-br0 --ip 172.172.0.15 --name abg -v /root/.ssh:/root/.ssh -p 20005:22 centos-ssh /usr/sbin/sshd -D
+    docker run -itd --net docker-br0 --ip 172.172.0.16 --name abh -v /root/.ssh:/root/.ssh -p 20006:22 centos-ssh /usr/sbin/sshd -D
+    docker run -itd --net docker-br0 --ip 172.172.0.17 --name abi -v /root/.ssh:/root/.ssh -p 20007:22 centos-ssh /usr/sbin/sshd -D
 
 
 # 部署容器
@@ -63,9 +63,12 @@ yum -y install openssh*
 
 
 # 快速使用
-    docker run -itd --name jade-pool -e active="dev" -p 8112:8112 -v /root/code:/root/code -v /root/ws:/root/ws -v /root/.m2:/root/.m2 -v /root/.ssh:/root/.ssh zhangyule1993/jade-pool:v1.0.0
+    使用同一个网络桥，让容器之间可以互相ssh登录
+    docker run -itd --net docker-br0 --ip 172.172.0.18 --name jade-pool -e active="dev" -p 8112:8112 -v /root/code:/root/code -v /root/ws:/root/ws -v /root/.m2:/root/.m2 -v /root/.ssh:/root/.ssh zhangyule1993/jade-pool:v1.0.0
 
 # docker批量重启
+    docker stop $(docker ps -a |grep ab| awk '{ print $1}' | tail -n +2)
+    docker rm $(docker ps -a |grep ab| awk '{ print $1}' | tail -n +2)
     docker start $(docker ps -a | awk '{ print $1}' | tail -n +2)
 
 
