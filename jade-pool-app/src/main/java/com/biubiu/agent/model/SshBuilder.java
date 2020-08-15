@@ -32,6 +32,7 @@ public class SshBuilder {
         if (Files.exists(Paths.get(remote.getIdentity()))) {
             jsch.addIdentity(remote.getIdentity(), remote.getPassphrase());
         }
+        log.info("user: {},host: {},port: {}", this.remote.getUser(), this.remote.getHost(), this.remote.getPort());
         Session session = jsch.getSession(this.remote.getUser(), this.remote.getHost(), this.remote.getPort());
         session.setPassword(this.remote.getPassword());
         session.setConfig("StrictHostKeyChecking", "yes");
