@@ -44,9 +44,9 @@ public class SshService {
                 sshNode.setIcon("el-icon-tickets");
                 Remote remote = parse(ssh);
                 sshNode.setHost(remote.getHost());
-                sshNode.setUser(remote.getUser);
-                sshNode.setPassword(remote.getPassword);
-                sshNode.setPort(remote.getPort);
+                sshNode.setUser(remote.getUser());
+                sshNode.setPassword(remote.getPassword());
+                sshNode.setPort(remote.getPort());
             }
             target.add(sshNode);
         }

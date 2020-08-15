@@ -11,7 +11,7 @@ public class SshNode {
     private String host;
     private String user;
     private String password;
-    private String port;
+    private int port;
     private String type;
     private List<SshNode> children;
 }
