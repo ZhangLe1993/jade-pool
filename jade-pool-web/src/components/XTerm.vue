@@ -62,7 +62,8 @@ export default {
     open: function() {
       console.log("socket连接成功");
       this.initXterm();
-      this.socket.onsend(JSON.stringify({type:"connect",data: {user: this.user, host:this.host, port: this.port}})); //转换为字符串
+      console.log()
+      this.socket.onsend(JSON.stringify({type:"connect",data: {user: this.node.user, host:this.node.host, port: this.node.port}})); //转换为字符串
     },
     error: function() {
       console.log("连接错误");
