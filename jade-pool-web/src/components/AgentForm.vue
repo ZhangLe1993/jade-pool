@@ -155,7 +155,7 @@
         data() {
             return {
                 options: [{
-                    value: 'http://47.99.39.195:32761',
+                    value: 'http://172.172.0.11:8080',
                     label: '华东1'
                 }],
                 /*form: {

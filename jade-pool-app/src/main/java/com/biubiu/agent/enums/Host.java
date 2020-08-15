@@ -8,7 +8,7 @@ public enum Host {
     /**
      * 华东1
      */
-    EAST_CHINA_I("华东1", "http://47.99.39.195:32761"),
+    EAST_CHINA_I("唐僧", "http://172.172.0.11:8080"),
 
     ;
 
