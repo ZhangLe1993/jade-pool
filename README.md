@@ -1,7 +1,12 @@
 # 瑶池开发者平台
+# 体验地址(开源不易，为了大家都能有一个好的体验，不要乱搞我的服务器和数据库哦，谢谢。)
+    http://121.196.27.184:8112/
+
 ## 运行一个mysql
     sudo docker run -itd -p 3306:3306 --name mysql -v /data/mysql/conf:/etc/mysql/conf.d -v /data/mysql/logs:/logs -v /data/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
+    sql在jade-pool-app的resource文件夹下面
 
+#  下面这些操作是因为我只有一台服务器，所以，使用docker创建的容器来模拟ssh登录.
 # 运行一个容器
     docker run -itd  --privileged --name abc -p 2200:22 centos /usr/sbin/init
     docker exec -it abc  /bin/bash
@@ -39,7 +44,7 @@ yum -y install openssh*
 
     创建网桥之后,使用ifconfig查看 会多出一个网桥,该网桥在docker启动或者重启之后,会自动显示出来。永久的,可以使用docker network rm docker-br0 移除网桥。
 
-# 在要访问容器的宿主机上添加路由表
+# 在要访问容器的宿主机上添加路由表（这个亲测可以不要，反正我没加这个，也没成功过）
     # ip route add 172.172.1.0/24 via ECS(IP) dev eno16777736(本机网卡)
 
 # 运行7个容器作为测试(先在jade-pool的容器中执行ssh-keygen,一路回车生成密钥，加入到主机的新人中，然后这七个容器挂载这个目录，批量授信）
@@ -64,7 +69,7 @@ yum -y install openssh*
     wget https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
 
 
-# 快速使用
+# 快速使用（镜像已经上传到docker hub）
     使用同一个网络桥，让容器之间可以互相ssh登录
     docker run -itd --net docker-br0 --ip 172.172.0.18 --name jade-pool -e active="dev" -p 8112:8112 -v /root/code:/root/code -v /root/ws:/root/ws -v /root/.m2:/root/.m2 -v /root/.ssh:/root/.ssh zhangyule1993/jade-pool:v1.0.0
 
