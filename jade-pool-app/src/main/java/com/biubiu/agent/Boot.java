@@ -15,7 +15,7 @@ public class Boot implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        SourceCreate sourceCreate = new SourceCreate();
+        /*SourceCreate sourceCreate = new SourceCreate();
         sourceCreate.setName("121.196.27.184");
         sourceCreate.setDescription("121.196.27.184");
         sourceCreate.setType("jdbc");
@@ -24,7 +24,7 @@ public class Boot implements CommandLineRunner {
         sourceConfig.setUsername("root");
         sourceConfig.setPassword("root");
         sourceCreate.setConfig(sourceConfig);
-        metaService.createSource(sourceCreate);
+        metaService.createSource(sourceCreate);*/
 
         // DBTables dbTables = metaService.getSourceTables(1L, "proxy");
         // System.out.println(dbTables);

@@ -58,5 +58,17 @@ yum -y install openssh*
     git clone https://github.com/ZhangLe1993/jade-pool.git
 
 
+# maven
+    wget https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+
+
+# 快速使用
+    docker run -itd --name jade-pool -e active="dev" -p 8112:8112 -v /root/code:/root/code -v /root/ws:/root/ws -v /root/.m2:/root/.m2 -v /root/.ssh:/root/.ssh zhangyule1993/jade-pool:v1.0.0
+
+# docker批量重启
+    docker start $(docker ps -a | awk '{ print $1}' | tail -n +2)
+
+
+
 
 
