@@ -1,5 +1,7 @@
 <template>
-  <div class="total-class" :id="elementId" :style="{width: '100%', height: '300px'}"></div>
+  <div>
+    <div class="total-class" :id="elementId" :style="{width: '100%', height: '300px'}"></div>
+  </div>
 </template>
 
 <script>
@@ -9,13 +11,16 @@ export default {
     elementId: String,
     value: Object,
   },
+  watch: {
+
+  },
   data() {
     return {
 
     }
   },
   methods: {
-    draw() {
+    drawDashboard() {
       let myChart = this.$echarts.init( document.getElementById(this.elementId));
       const option = {
         /*tooltip: {
@@ -35,7 +40,7 @@ export default {
     },
   },
   mounted() {
-    this.draw();
+    this.drawDashboard();
   }
 }
 </script>
