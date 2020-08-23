@@ -5,16 +5,16 @@
 # 项目截图
 
 # 首页
- ![1.png](https://github.com/ZhangLe1993/jade-pool/tree/master/doc/index.png)
+ ![1.png](https://gitee.com/ylzhang20/jade-pool/tree/master/doc/index.png)
 
 # 反向代理
- ![1.png](https://github.com/ZhangLe1993/jade-pool/tree/master/doc/agent.png)
+ ![1.png](https://gitee.com/ylzhang20/jade-pool/tree/master/doc/agent.png)
 
 # 数据仓库
- ![1.png](https://github.com/ZhangLe1993/jade-pool/tree/master/doc/console.png)
+ ![1.png](https://gitee.com/ylzhang20/jade-pool/tree/master/doc/console.png)
 
 # 数据仓库
- ![1.png](https://github.com/ZhangLe1993/jade-pool/tree/master/doc/terimate.png)
+ ![1.png](https://gitee.com/ylzhang20/jade-pool/tree/master/doc/terimate.png)
 
 ## 运行一个mysql
     sudo docker run -itd -p 3306:3306 --name mysql -v /data/mysql/conf:/etc/mysql/conf.d -v /data/mysql/logs:/logs -v /data/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
