@@ -11,7 +11,7 @@
  ![1.png](https://github.com/ZhangLe1993/jade-pool/tree/master/doc/agent.png)
 
 # 数据仓库
- ![1.png](https://github.com/ZhangLe1993/jade-pool/tree/master/docconsole.png)
+ ![1.png](https://github.com/ZhangLe1993/jade-pool/tree/master/doc/console.png)
 
 # 数据仓库
  ![1.png](https://github.com/ZhangLe1993/jade-pool/tree/master/doc/terimate.png)
