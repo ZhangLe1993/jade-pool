@@ -2,6 +2,20 @@
 # 体验地址(开源不易，为了大家都能有一个好的体验，不要乱搞我的服务器和数据库哦，谢谢。)
     http://121.196.27.184:8112/
 
+# 项目截图
+
+# 首页
+ ![1.png](./doc/index.png)
+
+# 反向代理
+ ![1.png](./doc/agent.png)
+
+# 数据仓库
+ ![1.png](./doc/console.png)
+
+# 数据仓库
+ ![1.png](./doc/terimate.png)
+
 ## 运行一个mysql
     sudo docker run -itd -p 3306:3306 --name mysql -v /data/mysql/conf:/etc/mysql/conf.d -v /data/mysql/logs:/logs -v /data/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
     sql在jade-pool-app的resource文件夹下面
