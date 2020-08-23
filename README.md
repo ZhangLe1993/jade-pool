@@ -5,16 +5,16 @@
 # 项目截图
 
 # 首页
- ![1.png](https://gitee.com/ylzhang20/jade-pool/tree/master/doc/index.png)
+ ![1.png](./doc/index.png)
 
 # 反向代理
- ![1.png](https://gitee.com/ylzhang20/jade-pool/tree/master/doc/agent.png)
+ ![1.png](./doc/agent.png)
 
 # 数据仓库
- ![1.png](https://gitee.com/ylzhang20/jade-pool/tree/master/doc/console.png)
+ ![1.png](./doc/console.png)
 
 # 数据仓库
- ![1.png](https://gitee.com/ylzhang20/jade-pool/tree/master/doc/terimate.png)
+ ![1.png](./doc/terimate.png)
 
 ## 运行一个mysql
     sudo docker run -itd -p 3306:3306 --name mysql -v /data/mysql/conf:/etc/mysql/conf.d -v /data/mysql/logs:/logs -v /data/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
@@ -96,6 +96,9 @@ yum -y install openssh*
     docker stop $(docker ps -a |grep ab| awk '{ print $1}' | tail -n +2)
     docker rm $(docker ps -a |grep ab| awk '{ print $1}' | tail -n +2)
     docker start $(docker ps -a | awk '{ print $1}' | tail -n +2)
+    
+# 捐助
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0131/233455_19250a2e_1798934.png "屏幕截图.png")![输入图片说明](https://images.gitee.com/uploads/images/2019/0131/233510_32da99dc_1798934.png "屏幕截图.png")
 
 
 
