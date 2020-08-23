@@ -10,4 +10,4 @@ mvn clean package -Dmaven.test.skip=true --settings /root/settings.xml
 
 cp -f target/*.jar /root/ws/app.jar
 cd /root/ws
-java -jar app.jar --spring.profiles.active=$active
+java -Dfile.encoding=utf-8 -jar app.jar --spring.profiles.active=$active
