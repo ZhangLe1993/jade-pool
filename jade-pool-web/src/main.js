@@ -25,6 +25,10 @@ Vue.prototype.$echarts = echarts;
 import api from './service';
 Vue.prototype.$api = api;
 
+/*
+  tesseract
+* cnpm install --save tesseract.js
+* */
 Vue.config.productionTip = false;
 
 /* elementUI */

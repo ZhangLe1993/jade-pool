@@ -5,6 +5,7 @@ import Agent from '../views/Agent.vue'
 import Login from '../views/Login.vue'
 import Console from '../views/Console.vue'
 import Terminal from '../views/Terminal.vue'
+import Tesseract from '../views/Tesseract.vue'
 Vue.use(VueRouter);
 
 const routes = [
@@ -43,6 +44,12 @@ const routes = [
         name: 'Terminal',
         component: Terminal,
         meta:  {title: '远程链接终端'},
+    },
+    {
+        path: '/tesseract',
+        name: 'Tesseract',
+        component: Tesseract,
+        meta:  {title: '图片识别'},
     },
 ];
 
