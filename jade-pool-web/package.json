@@ -11,7 +11,7 @@
     "@ffmpeg/ffmpeg": "^0.9.3",
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
-    "echarts": "^4.8.0",
+    "echarts": "^4.9.0",
     "element-ui": "^2.13.2",
     "ffmepg": "^0.0.2-security",
     "ffmpeg": "0.0.4",
@@ -23,7 +23,7 @@
     "vue-giant-tree": "^0.1.3",
     "vue-router": "^3.3.4",
     "vue-underscore": "^0.1.4",
-    "xterm": "^4.8.1",
+    "xterm": "^4.9.0",
     "xterm-addon-fit": "^0.4.0"
   },
   "devDependencies": {
