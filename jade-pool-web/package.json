@@ -15,6 +15,8 @@
     "element-ui": "^2.13.2",
     "ffmepg": "^0.0.2-security",
     "ffmpeg": "0.0.4",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^7.3.1",
     "sql-formatter": "^2.3.3",
     "tesseract.js": "^2.1.4",
     "three": "0.101.1",
