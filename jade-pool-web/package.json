@@ -16,6 +16,7 @@
     "ffmepg": "^0.0.2-security",
     "ffmpeg": "0.0.4",
     "sql-formatter": "^2.3.3",
+    "tesseract.js": "^2.1.4",
     "three": "0.101.1",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
