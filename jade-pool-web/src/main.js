@@ -35,6 +35,7 @@ Vue.config.productionTip = false;
 Vue.use(ElementUI);
 
 /* underscore */
+/* cnpm install --save vue-underscore */
 Vue.use(underscore);
 
 router.beforeEach((to, from, next) => {
