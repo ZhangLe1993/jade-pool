@@ -33,7 +33,7 @@ public class ProxyController {
      * @throws Exception
      */
     @SystemLog(description = "代理转发")
-    @RequestMapping(value = "/proxyxxx/**", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/proxyaaa/**", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public void proxy(HttpServletRequest request, HttpServletResponse response) throws IOException, URISyntaxException {
         // String url = URLDecoder.decode(request.getRequestURL().toString(), "UTF-8");
         URI uri = new URI(request.getRequestURI());
