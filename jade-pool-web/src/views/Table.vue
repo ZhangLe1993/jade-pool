@@ -23,6 +23,7 @@ export default {
     const sheet = new Spreadsheet("#x-spreadsheet-demo")
         .loadData({}) // load data
         .change(data => {
+          console.log(data)
           // save data to db
         });
     // data validation
