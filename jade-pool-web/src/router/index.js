@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import Console from '../views/Console.vue'
 import Terminal from '../views/Terminal.vue'
 import Tesseract from '../views/Tesseract.vue'
+import Table from '../views/Table.vue'
 Vue.use(VueRouter);
 
 const routes = [
@@ -50,6 +51,12 @@ const routes = [
         name: 'Tesseract',
         component: Tesseract,
         meta:  {title: '图片识别'},
+    },
+    {
+        path: '/sheet',
+        name: 'Table',
+        component: Table,
+        meta:  {title: '表格'},
     },
 ];
 

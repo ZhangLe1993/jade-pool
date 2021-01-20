@@ -21,6 +21,7 @@
         <el-menu-item index="console"><i class="el-icon-s-data"></i> 数据开发</el-menu-item>
         <el-menu-item index="terminal"><i class="el-icon-monitor"></i> 远程终端</el-menu-item>
         <el-menu-item index="tesseract"><i class="el-icon-search"></i> 图片识别</el-menu-item>
+        <el-menu-item index="sheet"><i class="el-icon-search"></i> 表格</el-menu-item>
         <el-menu-item index="user"><i class="el-icon-user"></i> 用户管理</el-menu-item>
         <el-menu-item index="system"><i class="el-icon-setting"></i> 系统管理</el-menu-item>
       </el-menu>

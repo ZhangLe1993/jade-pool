@@ -38,6 +38,13 @@ Vue.use(ElementUI);
 /* cnpm install --save vue-underscore */
 Vue.use(underscore);
 
+/* cnpm install --save  x-data-spreadsheet */
+/* x-data-spreadsheet 表格组件 */
+
+
+/* cnpm install --save less less-loader */
+
+
 router.beforeEach((to, from, next) => {
   if(to.meta.title) {
     document.title = to.meta.title;
