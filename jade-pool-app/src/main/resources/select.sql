@@ -13,10 +13,10 @@ insert into proxy.ssh(`name`, `description`, `config`, `type`, `parent_id`, `cre
 insert into proxy.ssh(`name`, `description`, `config`, `type`, `parent_id`, `create_uk`, `update_uk`) values('华东测试', '华东测试', '{\"host\": \"172.172.0.14\", \"port\":\"22\", \"password\": \"root\"}', 'NODE', 3, '105281', '105281');
 insert into proxy.ssh(`name`, `description`, `config`, `type`, `parent_id`, `create_uk`, `update_uk`) values('公有云测试', '公有云测试', '{\"host\": \"172.172.0.15\", \"port\":\"22\", \"password\": \"root\"}', 'NODE', 3, '105281', '105281');
 
-insert into proxy.ssh(`name`, `description`, `config`, `type`, `parent_id`, `create_uk`, `update_uk`) values('拍机堂', '拍机堂集群', '', 'FOLDER', -1, '105281', '105281');
-insert into proxy.ssh(`name`, `description`, `config`, `type`, `parent_id`, `create_uk`, `update_uk`) values('爱机汇', '爱机汇跳板机', '{\"host\": \"172.172.0.16\", \"port\":\"22\", \"password\": \"root\"}', 'NODE', 9, '105281', '105281');
+insert into proxy.ssh(`name`, `description`, `config`, `type`, `parent_id`, `create_uk`, `update_uk`) values('拍堂', '拍堂集群', '', 'FOLDER', -1, '105281', '105281');
+insert into proxy.ssh(`name`, `description`, `config`, `type`, `parent_id`, `create_uk`, `update_uk`) values('爱汇', '爱汇跳板机', '{\"host\": \"172.172.0.16\", \"port\":\"22\", \"password\": \"root\"}', 'NODE', 9, '105281', '105281');
 
-insert into proxy.ssh(`name`, `description`, `config`, `type`, `parent_id`, `create_uk`, `update_uk`) values('爱回收', '爱回收集群', '', 'FOLDER', -1, '105281', '105281');
+insert into proxy.ssh(`name`, `description`, `config`, `type`, `parent_id`, `create_uk`, `update_uk`) values('某司', '某司集群', '', 'FOLDER', -1, '105281', '105281');
 insert into proxy.ssh(`name`, `description`, `config`, `type`, `parent_id`, `create_uk`, `update_uk`) values('以旧换新', '以旧换新跳板机', '{\"host\": \"172.172.0.17\", \"port\":\"22\", \"password\": \"root\"}', 'NODE', 11, '105281', '105281');
 
 
